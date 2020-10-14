@@ -135,11 +135,11 @@ namespace VMS.TPS
             CreateVerificationPlan(course, new List<Beam> { beam }, plan, ssQA, beam.Id, calculateDose: false);
         }
 #endif
+
             foreach (Beam beam in plan.Beams)
             {
                 if (beam.ControlPoints.FirstOrDefault().PatientSupportAngle.ToString() != "0")
                 {
-                    planHasCouchKick = true;
                     MessageBox.Show("Plan has couch kick, please manually zero and recalculate/export.");
                     break;
                 }                  
